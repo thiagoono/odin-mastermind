@@ -1,5 +1,5 @@
-# Declares the module that will contain all the elements from the human and computer games
-module BaseGame
+# Declares the class that will contain all the elements from the human and computer games
+class BaseGame
   MAX_ATTEMPTS = 10
   ANSWER_LENGTH = 4
   COLORS = %i[black red green yellow blue magenta cyan white].freeze
