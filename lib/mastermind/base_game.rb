@@ -58,7 +58,7 @@ module BaseGame
 
   # Displays the attempts that were not yet made
   def display_remaining_tries
-    10.downto(@attempts.size) do |round|
+    MAX_ATTEMPTS.downto(@attempts.size) do |round|
       puts "| #{round.to_s.rjust(2)} |  ( ) ( ) ( ) ( )   |  o  o  o  o  |"
     end
   end
