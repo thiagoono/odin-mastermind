@@ -19,7 +19,7 @@ module BaseGame
   def get_hits(colors)
     hits = []
     hits << get_perfect_hits(colors)
-    hits << get_partial_hits(colors)
+    hits << get_partial_hits(colors, hits)
     hits.flatten
   end
 
@@ -27,6 +27,15 @@ module BaseGame
     hits = []
     colors.each_with_index do |color, index|
       hits << PERFECT_HIT if color == @answer[index]
+    end
+    hits
+  end
+
+  def get_partial_hits(colors, perfect_hits)
+    hits = []
+    colors.uniq.each do |color|
+      hits_quantity = [@answer.count(color) - perfect_hits.count(color), colors.count(color)].min
+      hits << Array.new(hits_quantity, PARTIAL_HIT)
     end
     hits
   end
