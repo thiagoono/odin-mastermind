@@ -6,6 +6,23 @@ module BaseGame
   PERFECT_HIT = "●".freeze
   PARTIAL_HIT = "○".freeze
 
+  def try_combination?(colors)
+    return true if colors == @answer
+
+    @attempts.push({ colors: colors, hits: get_hits(colors) })
+    display_board
+    false
+  end
+
+  private
+
+  def get_hits(colors)
+    hits = []
+    hits << get_perfect_hits(colors)
+    hits << get_partial_hits(colors)
+    hits.flatten
+  end
+
   def display_board
     puts "+---------------------------------------+"
     puts "|               MASTERMIND              |"
