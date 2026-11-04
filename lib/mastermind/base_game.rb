@@ -23,6 +23,14 @@ module BaseGame
     hits.flatten
   end
 
+  def get_perfect_hits(colors)
+    hits = []
+    colors.each_with_index do |color, index|
+      hits << PERFECT_HIT if color == @answer[index]
+    end
+    hits
+  end
+
   def display_board
     puts "+---------------------------------------+"
     puts "|               MASTERMIND              |"
