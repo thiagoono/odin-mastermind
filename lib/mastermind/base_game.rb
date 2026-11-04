@@ -1,5 +1,11 @@
 # Declares the module that will contain all the elements from the human and computer games
 module BaseGame
+  MAX_ATTEMPTS = 10
+  ANSWER_LENGTH = 4
+  COLORS = %i[black red green yellow blue magenta cyan white].freeze
+  PERFECT_HIT = "●".freeze
+  PARTIAL_HIT = "○".freeze
+
   def display_board
     puts "+---------------------------------------+"
     puts "|               MASTERMIND              |"
