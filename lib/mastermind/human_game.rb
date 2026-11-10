@@ -22,13 +22,12 @@ class HumanGame < BaseGame
 
   # Asks the color and convert it to a symbol
   def ask_color(num)
-    puts "Type the color #{num}"
-
     loop do
+      puts "Type the color #{num}"
       color = gets.strip
       return color if color_to_symbol(color)
 
-      puts "\n\nWarning: Invalid color! Please try again.".colorize(color: :red, mode: :underline)
+      puts "\nWarning: Invalid color! Please try again.\n".colorize(color: :red, mode: :underline)
     end
   end
 end
