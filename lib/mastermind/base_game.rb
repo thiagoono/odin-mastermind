@@ -5,9 +5,10 @@ require_relative "game_config"
 class BaseGame
   include GameConfig
 
-  attr_reader :board
+  attr_reader :board, :attempts
 
   def initialize
+    @attempts = []
     @board = Board.new(self)
   end
 

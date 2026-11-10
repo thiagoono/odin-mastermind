@@ -6,7 +6,6 @@ class HumanGame < BaseGame
 
   def initialize
     super
-    @attempts = []
     @answer = Array.new(4, COLORS[rand(6)])
   end
 
