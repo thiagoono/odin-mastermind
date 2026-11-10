@@ -25,7 +25,7 @@ class Board
   # Displays the attempts that were not yet made
   def display_remaining_tries
     MAX_ATTEMPTS.downto(@game.attempts.size) do |round|
-      puts "| #{round.to_s.rjust(2)} |  ( ) ( ) ( ) ( )   |  o  o  o  o  |"
+      puts "| #{round.to_s.rjust(2)} |  ( ) ( ) ( ) ( )  |  o  o  o  o  |"
     end
   end
 
