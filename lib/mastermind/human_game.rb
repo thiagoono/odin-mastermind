@@ -9,7 +9,7 @@ class HumanGame < BaseGame
   def initialize
     super
     @attempts = []
-    @answer = Array.new(4, COLORS[rand(8)])
+    @answer = Array.new(4, COLORS[rand(6)])
   end
 
   # Makes an attempt to guess the answer

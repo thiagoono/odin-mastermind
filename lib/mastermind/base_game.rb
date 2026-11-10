@@ -70,4 +70,12 @@ class BaseGame
       puts "#{@attempts[rounds - 1].hits.join(' ')}  |"
     end
   end
+
+  # Displays the final board
+  def end_game
+    display_board
+    puts "|          SECRET COMBINATION           |"
+    puts "|               #{answer.map { |color| '●'.colorize(color) }.join(' ')}              |"
+    puts "+---------------------------------------+"
+  end
 end
