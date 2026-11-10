@@ -1,3 +1,5 @@
+require_relative "board"
+
 # Declares the class that will contain all the elements from the human and computer games
 class BaseGame
   MAX_ATTEMPTS = 10
@@ -5,6 +7,10 @@ class BaseGame
   COLORS = %i[red green yellow blue magenta cyan].freeze
   PERFECT_HIT = "●".freeze
   PARTIAL_HIT = "○".freeze
+
+  def initialize
+    @board = Board.new(self)
+  end
 
   # Allows the player/computer make an attempt
   def try_combination?(colors)
@@ -42,43 +48,6 @@ class BaseGame
       hits << Array.new(hits_quantity, PARTIAL_HIT)
     end
     hits
-  end
-
-  # Displays the board
-  def display_board
-    puts "+---------------------------------------+"
-    puts "|               MASTERMIND              |"
-    puts "+---------------------------------------+"
-    puts "|       COMBINACAO       |   FEEDBACK   |"
-    puts "+---------------------------------------+"
-    display_remaining_tries
-    display_tries
-    puts "+---------------------------------------+"
-  end
-
-  # Displays the attempts that were not yet made
-  def display_remaining_tries
-    MAX_ATTEMPTS.downto(@attempts.size) do |round|
-      puts "| #{round.to_s.rjust(2)} |  ( ) ( ) ( ) ( )   |  o  o  o  o  |"
-    end
-  end
-
-  # Displays the previous attempts
-  def display_tries
-    @attempts.size.downto(1) do |round|
-      prints "| #{round.to_s.rjust(2)} |  (#{@attempts[round - 1].colors.join(') (')})  |  "
-      puts "#{@attempts[rounds - 1].hits.join(' ')}  |"
-    end
-  end
-
-  # Displays the final board
-  def end_game?
-    display_board
-    puts "|          SECRET COMBINATION           |"
-    puts "|               #{answer.map { |color| '●'.colorize(color) }.join(' ')}              |"
-    puts "+---------------------------------------+"
-
-    true
   end
 
   # Converts the color written into a symbol

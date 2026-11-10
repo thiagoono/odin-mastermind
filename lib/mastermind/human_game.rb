@@ -4,7 +4,7 @@ require_relative "base_game"
 class HumanGame < BaseGame
   include BaseGame
 
-  attr_reader :answer
+  attr_reader :answer, :attempts
 
   def initialize
     super
