@@ -8,6 +8,8 @@ class BaseGame
   PERFECT_HIT = "●".freeze
   PARTIAL_HIT = "○".freeze
 
+  attr_reader :board
+
   def initialize
     @board = Board.new(self)
   end
