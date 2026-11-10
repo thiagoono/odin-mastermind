@@ -16,7 +16,9 @@ class HumanGame < BaseGame
   def attempt?
     colors = []
     1.upto(4) { |num| colors << ask_color(num) }
-    end_game if try_combination?(colors) || @attempts.size >= MAX_ATTEMPTS
+    return end_game? if try_combination?(colors) || @attempts.size >= MAX_ATTEMPTS
+
+    false
   end
 
   # Asks the color and convert it to a symbol
@@ -28,26 +30,6 @@ class HumanGame < BaseGame
       return color if color_to_symbol(color)
 
       puts "\n\nWarning: Invalid color! Please try again.".colorize(color: :red, mode: :underline)
-    end
-  end
-
-  # Converts the color written into a symbol
-  def color_to_symbol(string)
-    case string.downcase
-    when "green"
-      :green
-    when "red"
-      :red
-    when "yellow"
-      :yellow
-    when "magenta"
-      :magenta
-    when "blue"
-      :blue
-    when "cyan"
-      :light_cyan
-    else
-      false
     end
   end
 end

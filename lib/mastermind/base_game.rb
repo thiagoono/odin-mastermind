@@ -72,10 +72,32 @@ class BaseGame
   end
 
   # Displays the final board
-  def end_game
+  def end_game?
     display_board
     puts "|          SECRET COMBINATION           |"
     puts "|               #{answer.map { |color| '●'.colorize(color) }.join(' ')}              |"
     puts "+---------------------------------------+"
+
+    true
+  end
+
+  # Converts the color written into a symbol
+  def color_to_symbol(string)
+    case string.downcase
+    when "green"
+      :green
+    when "red"
+      :red
+    when "yellow"
+      :yellow
+    when "magenta"
+      :magenta
+    when "blue"
+      :blue
+    when "cyan"
+      :light_cyan
+    else
+      false
+    end
   end
 end
