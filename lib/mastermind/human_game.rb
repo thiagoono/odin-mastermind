@@ -24,8 +24,9 @@ class HumanGame < BaseGame
   def ask_color(num)
     loop do
       puts "Type the color #{num}"
-      color = gets.strip
-      return color if color_to_symbol(color)
+      color = color_to_symbol(gets.strip)
+
+      return color if color
 
       puts "\nWarning: Invalid color! Please try again.\n".colorize(color: :red, mode: :underline)
     end
