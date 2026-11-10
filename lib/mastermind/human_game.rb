@@ -2,8 +2,6 @@ require_relative "base_game"
 
 # Class for the game where the computer creates the password and the human answers
 class HumanGame < BaseGame
-  include BaseGame
-
   attr_reader :answer, :attempts
 
   def initialize
