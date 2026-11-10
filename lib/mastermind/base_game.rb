@@ -12,13 +12,14 @@ class BaseGame
     @board = Board.new(self)
   end
 
+  protected
+
   # Allows the player/computer make an attempt
   def try_combination?(colors)
     return true if colors == @answer
 
     @attempts.push({ colors: colors, hits: get_hits(colors) })
-    display_board
-    false
+    @board.display_board
   end
 
   private
