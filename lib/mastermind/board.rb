@@ -16,6 +16,8 @@ class Board
     puts "+---------------------------------------+"
   end
 
+  private
+
   # Displays the attempts that were not yet made
   def display_remaining_tries
     MAX_ATTEMPTS.downto(@board.attempts.size) do |round|

@@ -21,6 +21,8 @@ class HumanGame < BaseGame
     false
   end
 
+  private
+
   # Asks the color and convert it to a symbol
   def ask_color(num)
     puts "Type the color #{num}"
