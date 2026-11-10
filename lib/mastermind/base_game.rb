@@ -1,6 +1,8 @@
 require_relative "board"
 require_relative "game_config"
 
+require "colorize"
+
 # Declares the class that will contain all the elements from the human and computer games
 class BaseGame
   include GameConfig

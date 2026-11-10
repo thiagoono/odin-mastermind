@@ -1,5 +1,7 @@
 require_relative "game_config"
 
+require "colorize"
+
 # Class created to display the elements to the user
 class Board
   include GameConfig
