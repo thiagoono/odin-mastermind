@@ -1,5 +1,9 @@
+require_relative "game_config"
+
 # Class created to display the elements to the user
 class Board
+  include GameConfig
+
   def initialize(game)
     @game = game
   end

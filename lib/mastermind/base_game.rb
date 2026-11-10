@@ -1,12 +1,9 @@
 require_relative "board"
+require_relative "game_config"
 
 # Declares the class that will contain all the elements from the human and computer games
 class BaseGame
-  MAX_ATTEMPTS = 10
-  ANSWER_LENGTH = 4
-  COLORS = %i[red green yellow blue magenta cyan].freeze
-  PERFECT_HIT = "●".freeze
-  PARTIAL_HIT = "○".freeze
+  include GameConfig
 
   attr_reader :board
 
