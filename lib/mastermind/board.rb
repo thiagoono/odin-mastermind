@@ -50,7 +50,9 @@ class Board
   end
 
   def display_attempt(round)
-    print "| #{round.to_s.rjust(2)} |  (#{@game.attempts[round - 1][:colors].join(') (')})  |  "
+    print "| #{round.to_s.rjust(2)} |  (#{@game.attempts[round - 1][:colors].map do |color|
+      '●'.colorize(color)
+    end.join(') (')})  |  "
   end
 
   def display_hits(round)
