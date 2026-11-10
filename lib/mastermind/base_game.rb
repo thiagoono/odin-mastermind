@@ -2,7 +2,7 @@
 class BaseGame
   MAX_ATTEMPTS = 10
   ANSWER_LENGTH = 4
-  COLORS = %i[black red green yellow blue magenta cyan white].freeze
+  COLORS = %i[red green yellow blue magenta cyan].freeze
   PERFECT_HIT = "●".freeze
   PARTIAL_HIT = "○".freeze
 
