@@ -10,6 +10,16 @@ class Board
     @game = game
   end
 
+  # Displays the final board
+  def end_game?
+    display_board
+    puts "|          SECRET COMBINATION           |"
+    puts "|               #{@game.answer.map { |color| '●'.colorize(color) }.join(' ')}              |"
+    puts "+---------------------------------------+"
+
+    true
+  end
+
   # Displays the board
   def display_board
     puts "+---------------------------------------+"
@@ -45,15 +55,5 @@ class Board
 
   def display_hits(round)
     puts "#{@game.attempts[round - 1].hits.join(' ')}  |"
-  end
-
-  # Displays the final board
-  def end_game?
-    display_board
-    puts "|          SECRET COMBINATION           |"
-    puts "|               #{@game.answer.map { |color| '●'.colorize(color) }.join(' ')}              |"
-    puts "+---------------------------------------+"
-
-    true
   end
 end
