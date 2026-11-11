@@ -6,8 +6,8 @@ class HumanGame < BaseGame
 
   def initialize
     super
-    display_board
     @answer = [COLORS[rand(6)], COLORS[rand(6)], COLORS[rand(6)], COLORS[rand(6)]]
+    @board.display_board
   end
 
   # Makes an attempt to guess the answer
