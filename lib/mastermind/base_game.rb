@@ -19,9 +19,9 @@ class BaseGame
   # Allows the player/computer make an attempt
   def try_combination?(colors)
     @attempts.push({ colors: colors, hits: get_hits(colors) })
-    @board.display_board
+    return true if colors == @answer
 
-    true if colors == @answer
+    @board.display_board
   end
 
   private
