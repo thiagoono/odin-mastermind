@@ -21,5 +21,6 @@ class ComputerGame < BaseGame
   end
 
   def make_a_guess
+    [COLORS[rand(6)], COLORS[rand(6)], COLORS[rand(6)], COLORS[rand(6)]]
   end
 end
