@@ -4,6 +4,10 @@ require_relative "base_game"
 class ComputerGame < BaseGame
   def initialize(answer)
     super
-    @answer = get_answer
+    @answer = ask_answer
+  end
+
+  def ask_answer
+    1.upto(4) { |num| @answer << ask_color(num) }
   end
 end

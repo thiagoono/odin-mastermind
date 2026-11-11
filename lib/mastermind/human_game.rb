@@ -6,6 +6,7 @@ class HumanGame < BaseGame
 
   def initialize
     super
+    display_board
     @answer = [COLORS[rand(6)], COLORS[rand(6)], COLORS[rand(6)], COLORS[rand(6)]]
   end
 
@@ -16,19 +17,5 @@ class HumanGame < BaseGame
     return @board.end_game? if try_combination?(colors)
 
     false
-  end
-
-  private
-
-  # Asks the color and convert it to a symbol
-  def ask_color(num)
-    loop do
-      puts "Type the color #{num}"
-      color = color_to_symbol(gets.strip)
-
-      return color if color
-
-      puts "\nWarning: Invalid color! Please try again.\n".colorize(color: :red, mode: :underline)
-    end
   end
 end

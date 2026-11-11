@@ -9,7 +9,6 @@ class Board
   def initialize(game)
     @game = game
     display_colors
-    display_board
   end
 
   # Displays the available colors to the user

@@ -1,11 +1,13 @@
 require_relative "board"
 require_relative "game_config"
+require_relative "input_handler"
 
 require "colorize"
 
 # Declares the class that will contain all the elements from the human and computer games
 class BaseGame
   include GameConfig
+  include InputHandler
 
   attr_reader :board, :attempts
 
@@ -52,25 +54,5 @@ class BaseGame
 
     hits_quantity -= perfect_hits.size
     Array.new(hits_quantity, PARTIAL_HIT)
-  end
-
-  # Converts the color written into a symbol
-  def color_to_symbol(string)
-    case string.downcase
-    when "green"
-      :green
-    when "red"
-      :red
-    when "yellow"
-      :yellow
-    when "magenta"
-      :magenta
-    when "blue"
-      :blue
-    when "cyan"
-      :light_cyan
-    else
-      false
-    end
   end
 end
