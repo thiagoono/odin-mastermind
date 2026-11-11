@@ -48,7 +48,7 @@ class Board
   def display_remaining_tries
     return if @game.attempts.size == MAX_ATTEMPTS
 
-    MAX_ATTEMPTS.downto(@game.attempts.size) do |round|
+    MAX_ATTEMPTS.downto(@game.attempts.size + 1) do |round|
       puts "| #{round.to_s.rjust(2)} |  ( ) ( ) ( ) ( )  |  o  o  o  o  |"
     end
   end
