@@ -36,6 +36,8 @@ class Board
 
   # Displays the attempts that were not yet made
   def display_remaining_tries
+    return if @game.attempts.size == MAX_ATTEMPTS
+
     MAX_ATTEMPTS.downto(@game.attempts.size) do |round|
       puts "| #{round.to_s.rjust(2)} |  ( ) ( ) ( ) ( )  |  o  o  o  o  |"
     end
