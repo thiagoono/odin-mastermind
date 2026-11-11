@@ -18,10 +18,10 @@ class BaseGame
 
   # Allows the player/computer make an attempt
   def try_combination?(colors)
-    return true if colors == @answer
-
     @attempts.push({ colors: colors, hits: get_hits(colors) })
     @board.display_board
+
+    true if colors == @answer
   end
 
   private
@@ -30,7 +30,7 @@ class BaseGame
   def get_hits(colors)
     hits = []
     hits << get_perfect_hits(colors)
-    hits << get_partial_hits(colors, hits)
+    hits << get_partial_hits(colors, hits.flatten)
     hits.flatten!
     hits.fill("o", hits.size...4)
   end
@@ -46,12 +46,12 @@ class BaseGame
 
   # Searches for colors that exist, but are in the wrong place
   def get_partial_hits(colors, perfect_hits)
-    hits = []
-    colors.uniq.each do |color|
-      hits_quantity = [@answer.count(color) - perfect_hits.count(color), colors.count(color)].min
-      hits << Array.new(hits_quantity, PARTIAL_HIT)
+    hits_quantity = colors.uniq.reduce(0) do |accumulator, color|
+      accumulator + [@answer.count(color), colors.count(color)].min
     end
-    hits
+
+    hits_quantity -= perfect_hits.size
+    Array.new(hits_quantity, PARTIAL_HIT)
   end
 
   # Converts the color written into a symbol
