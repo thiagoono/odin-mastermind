@@ -3,12 +3,15 @@ module InputHandler
   # Asks the color and convert it to a symbol
   def ask_color(num)
     loop do
-      puts "Type the color #{num}"
+      print "\e[2K\rType the color #{num}: "
       color = color_to_symbol(gets.strip)
 
+      print "\e[1A"
       return color if color
 
-      puts "\nWarning: Invalid color! Please try again.\n".colorize(color: :red, mode: :underline)
+      mensagem = "Warning: Invalid color! Please try again.".colorize(color: :red, mode: :underline)
+      print "\e[2K\r#{mensagem}"
+      sleep 2
     end
   end
 

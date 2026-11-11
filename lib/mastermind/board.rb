@@ -19,11 +19,12 @@ class Board
     puts "| #{'●'.colorize(:red)}  red      #{'●'.colorize(:green)}  green    |"
     puts "| #{'●'.colorize(:blue)}  blue     #{'●'.colorize(:yellow)}  yellow   |"
     puts "| #{'●'.colorize(:magenta)}  magenta  #{'●'.colorize(:light_cyan)}  cyan     |"
-    puts "+-------------------------+"
+    puts "+-------------------------+\n"
   end
 
   # Displays the final board
   def end_game
+    clear_board
     display_board
     puts "|          SECRET COMBINATION           |"
     puts "|               #{@game.answer.map { |color| '●'.colorize(color) }.join(' ')}                 |"
@@ -39,7 +40,11 @@ class Board
     puts "+---------------------------------------+"
     display_remaining_tries
     display_tries
-    puts "+---------------------------------------+"
+    puts "+---------------------------------------+\n"
+  end
+
+  def clear_board
+    16.times { print "\e[1A\e[2K" }
   end
 
   private

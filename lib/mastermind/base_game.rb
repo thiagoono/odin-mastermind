@@ -26,6 +26,7 @@ class BaseGame
       return true
     end
 
+    @board.clear_board
     @board.display_board
   end
 
