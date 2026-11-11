@@ -5,6 +5,7 @@ class ComputerGame < BaseGame
   def initialize
     super
     @answer = ask_answer
+    @board.display_board
   end
 
   # Method to make the computer make a new attempt
