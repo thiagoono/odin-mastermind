@@ -14,8 +14,6 @@ class HumanGame < BaseGame
   def attempt?
     colors = []
     1.upto(4) { |num| colors << ask_color(num) }
-    return @board.end_game? if try_combination?(colors)
-
-    false
+    try_combination?(colors)
   end
 end

@@ -19,4 +19,7 @@ class ComputerGame < BaseGame
   def ask_answer
     1.upto(4) { |num| @answer << ask_color(num) }
   end
+
+  def make_a_guess
+  end
 end

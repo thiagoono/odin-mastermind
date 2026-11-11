@@ -23,13 +23,11 @@ class Board
   end
 
   # Displays the final board
-  def end_game?
+  def end_game
     display_board
     puts "|          SECRET COMBINATION           |"
     puts "|               #{@game.answer.map { |color| '●'.colorize(color) }.join(' ')}                 |"
     puts "+---------------------------------------+"
-
-    true
   end
 
   # Displays the board
