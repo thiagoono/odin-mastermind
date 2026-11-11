@@ -8,6 +8,19 @@ class Board
 
   def initialize(game)
     @game = game
+    display_colors
+    display_board
+  end
+
+  # Displays the available colors to the user
+  def display_colors
+    puts "+-------------------------+"
+    puts "|     AVAILABLE COLORS    |"
+    puts "+-------------------------+"
+    puts "| #{'●'.colorize(:red)}  red      #{'●'.colorize(:green)}  green    |"
+    puts "| #{'●'.colorize(:blue)}  blue     #{'●'.colorize(:yellow)}  yellow   |"
+    puts "| #{'●'.colorize(:magenta)}  magenta  #{'●'.colorize(:light_cyan)}  cyan     |"
+    puts "+-------------------------+"
   end
 
   # Displays the final board
