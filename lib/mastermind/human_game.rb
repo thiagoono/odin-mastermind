@@ -2,8 +2,6 @@ require_relative "base_game"
 
 # Class for the game where the computer creates the password and the human answers
 class HumanGame < BaseGame
-  attr_reader :answer, :attempts
-
   def initialize
     super
     @answer = [COLORS[rand(6)], COLORS[rand(6)], COLORS[rand(6)], COLORS[rand(6)]]

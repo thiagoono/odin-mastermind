@@ -9,7 +9,7 @@ class BaseGame
   include GameConfig
   include InputHandler
 
-  attr_reader :board, :attempts
+  attr_reader :board, :attempts, :answer
 
   def initialize
     @attempts = []
