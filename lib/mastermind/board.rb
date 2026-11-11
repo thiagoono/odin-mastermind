@@ -25,7 +25,7 @@ class Board
     puts "+---------------------------------------+"
     puts "|               MASTERMIND              |"
     puts "+---------------------------------------+"
-    puts "|       COMBINACAO       |   FEEDBACK   |"
+    puts "|       COMBINATION      |   FEEDBACK   |"
     puts "+---------------------------------------+"
     display_remaining_tries
     display_tries
