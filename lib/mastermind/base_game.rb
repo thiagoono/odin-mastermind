@@ -31,7 +31,8 @@ class BaseGame
     hits = []
     hits << get_perfect_hits(colors)
     hits << get_partial_hits(colors, hits)
-    hits.flatten
+    hits.flatten!
+    hits.fill("o", hits.size...4)
   end
 
   # Searches for colors that exist and are in the correct place
