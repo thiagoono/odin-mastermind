@@ -7,6 +7,8 @@ class ComputerGame < BaseGame
     @answer = ask_answer
   end
 
+  private
+
   def ask_answer
     1.upto(4) { |num| @answer << ask_color(num) }
   end
