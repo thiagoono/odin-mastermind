@@ -19,9 +19,4 @@ class ComputerGame < BaseGame
     1.upto(4) { |num| answer << ask_color(num) }
     answer
   end
-
-  # Algorithm to make a n intelligent guess based on the previous attempts and hits
-  def make_a_guess
-    [COLORS[rand(6)], COLORS[rand(6)], COLORS[rand(6)], COLORS[rand(6)]]
-  end
 end
