@@ -15,6 +15,16 @@ module InputHandler
     end
   end
 
+  def play_again?
+    puts "Do you want to play again? (y/n)"
+    input = gets.strip
+    return false unless input[0].downcase == "y"
+
+    28.times { print "\e[1A\e[2K" }
+  end
+
+  private
+
   # Converts the color written into a symbol
   def color_to_symbol(string)
     case string.downcase

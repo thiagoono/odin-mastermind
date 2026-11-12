@@ -19,4 +19,14 @@ until new_game
   end
 end
 
-next until new_game.attempt?
+loop do
+  next until new_game.attempt?
+
+  break unless new_game.play_again?
+
+  new_game = if game_mode == 1
+               HumanGame.new
+             else
+               ComputerGame.new
+             end
+end
