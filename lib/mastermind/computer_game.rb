@@ -1,18 +1,14 @@
 require_relative "base_game"
+require_relative "game_solver"
 
 # Class for the game mode where the user types the secret combination and the computer must guess
 class ComputerGame < BaseGame
+  include GameSolver
+
   def initialize
     super
     @answer = ask_answer
     @board.display_board
-  end
-
-  # Method to make the computer make a new attempt
-  def attempt?
-    sleep 2
-    colors = make_a_guess
-    try_combination?(colors)
   end
 
   private
