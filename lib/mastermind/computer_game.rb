@@ -11,6 +11,11 @@ class ComputerGame < BaseGame
     @board.display_board
   end
 
+  def try_combination?(colors)
+    sleep 1.5
+    super
+  end
+
   private
 
   # Method destined to ask the user for the secret combination of colors

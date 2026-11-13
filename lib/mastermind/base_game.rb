@@ -20,7 +20,6 @@ class BaseGame
 
   # Allows the player/computer make an attempt
   def try_combination?(colors)
-    sleep 2
     @attempts.push({ colors: colors, hits: get_hits(colors) })
     if colors == @answer || @attempts.size >= MAX_ATTEMPTS
       @board.end_game
