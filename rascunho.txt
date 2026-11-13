@@ -1,0 +1,43 @@
+1. Descobrir todas as cores (máximo 5 tentativas)
+
+2. Verificar resultados e descobrir lados (máximo de 2 tentativas)
+    (1) (1) (2) (2) -> 1 e 2 representam as duas cores que menos aparecem
+    Verificar resultados
+    1° caso: 4 cores diferentes
+        Verificar resultados
+            1 branca e uma preta (indica que estão ambas do mesmo lado)
+                (1) (1) (3) (3)
+            2 bolas iguais
+                (3) (3) (4) (4)
+        com isso, será possível descobrir os lados de cada uma das bolas
+
+    2° caso: 3 cores diferentes (Bola 3 aparece duas vezes)
+        Verificar resultados
+            1 branca e uma preta (indica que estão ambas do mesmo lado)
+                (1) (2) (3) (3)
+            2 bolas iguais
+                Lados já encontrados
+            com isso, será possível descobrir os lados de cada uma das bolas
+
+    3° caso: duas bolas de cada cor
+        Verificar resultados
+            4 pretas
+                Lados encontrados
+            2 brancas e 2 pretas
+                Lados encontrados
+
+    4° caso: três repetidas e uma diferente
+        Lados encontrados
+
+    5° caso: 4 bolas iguais
+        Resultado já encontrado
+
+3. Após descoberto os lados, encontrar posição exata (L1, L2, R1, R2)
+    (L1) (L2) (R1) (R2)
+    Verificar resultados
+        4 pretas
+            (L2) (L1) (R2) (R1)
+            Resultado encontrado!
+        2 pretas
+            (L1) (L2) (R2) (R1)
+            Nesse caso haverá duas possibilidades: Resultado encontrado ou encontrar 4 pretas
